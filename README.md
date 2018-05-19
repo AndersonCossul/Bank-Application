@@ -12,7 +12,7 @@ Your application should do the following:
 *deposit()<br/>withdraw()<br/>transfer()<br/>showinfo()<br/><br/>11-Digit Account Number (generated with the following process: 1 or 2 depending on Savings or Checking, last two digits of SSN, unique 5-digit number, and random 3-digit number)*
 
 * Saving Account holders are given a Safety Deposit Box, identified by a 3-digit number and accessed with a 4-digit code
-* Checking Account holders are assigned a Debid Card with a 12-digit number and a 4-digit PIN
+* Checking Account holders are assigned a Debit Card with a 12-digit number and a 4-digit PIN
 * Both accounts will use an interface that determines the base interest rate
 *Saving accounts will use .25 points less than the base rate*
 *Checking accounts will use a 15% of the base rate.*
@@ -21,7 +21,7 @@ Your application should do the following:
 ---
 
 Learning objectives:
-* Learn to develop a robust application archicture
+* Learn to develop a robust application architecture
 * Use when to use abstract classes and abstract methods
 * Use an interface API to receive information from a developer's application
 * Explore constructors deeper and use the super() keyword
