@@ -19,8 +19,23 @@ public class Saving extends Account {
 	public Saving(String name, int socialSecurityNumber, double balance) {
 		super(name, socialSecurityNumber, balance);
 		accountNumber = "2" + accountNumber;
+		safetyDepositBoxID = generateSafetyDepositBoxID();
+		safetyDepositBoxKey = generateSafetyDepositBoxKey();
 	}
-
+	
+	/**
+	 * @return 3 digit random number.
+	 */
+	private int generateSafetyDepositBoxID() {
+		return (int) (Math.random() * Math.pow(10, 3));
+	}
+	
+	/**
+	 * @return 4 digit random number.
+	 */
+	private int generateSafetyDepositBoxKey() {
+		return (int) (Math.random() * Math.pow(10, 4));
+	}
 	// List any methods specific to the Savings Account
 	@Override
 	public void showInfo() {

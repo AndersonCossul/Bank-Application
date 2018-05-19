@@ -4,6 +4,7 @@ public class Main {
 		checking.showInfo();
 		System.out.println();
 
+		System.out.println("*-*-*-*-*-*-*-*-*-*-*");
 		Account saving = new Saving("Anderson Cossul", 1203192319, 2000);
 		saving.showInfo();
 		System.out.println();
