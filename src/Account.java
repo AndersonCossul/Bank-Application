@@ -69,7 +69,7 @@ public abstract class Account implements IBaseRate {
 	 * This method will adjust the balance based on the rate.
 	 */
 	public void compound() {
-		balance = balance * (rate / 100);
+		balance += balance * (rate / 100);
 	}
 	
 	/**
