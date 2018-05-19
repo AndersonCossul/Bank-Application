@@ -1,3 +1,4 @@
+package main;
 /**
  * This parent class shares all account shared info.
  * 
@@ -5,12 +6,12 @@
  *
  */
 public abstract class Account implements IBaseRate {
-	protected String name;
-	protected int socialSecurityNumber;
-	protected double balance;
+	private String name;
+	private int socialSecurityNumber;
+	private double balance;
+	private double rate;
 	protected String accountNumber;
-	protected double rate;
-	protected static int accountCounter = 10000;
+	private static int accountCounter = 10000;
 
 	public Account(String name, int socialSecurityNumber, double initialDeposit) {
 		this.name = name;

@@ -1,3 +1,4 @@
+package main;
 /**
  * This interface will simulate as if the BaseRate was coming
  * from an external API.
