@@ -29,14 +29,14 @@ public class Saving extends Account {
 	private int generateSafetyDepositBoxID() {
 		return (int) (Math.random() * Math.pow(10, 3));
 	}
-	
+
 	/**
 	 * @return 4 digit random number.
 	 */
 	private int generateSafetyDepositBoxKey() {
 		return (int) (Math.random() * Math.pow(10, 4));
 	}
-	// List any methods specific to the Savings Account
+
 	@Override
 	public void showInfo() {
 		super.showInfo();

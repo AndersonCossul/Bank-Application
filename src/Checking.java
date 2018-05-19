@@ -19,9 +19,24 @@ public class Checking extends Account {
 	public Checking(String name, int socialSecurityNumber, double initialDeposit) {
 		super(name, socialSecurityNumber, initialDeposit);
 		accountNumber = "1" + accountNumber;
+		debitCardNumber = generateDebitCardNumber();
+		debitCardPIN = generateDebitCardPIN();
 	}
 
-	// List any methods specific to the Checking Account
+	/**
+	 * @return 12 random digit number.
+	 */
+	private int generateDebitCardNumber() {
+		return (int) (Math.random() * Math.pow(10, 12));
+	}
+
+	/**
+	 * @return 4 random digit number.
+	 */
+	private int generateDebitCardPIN() {
+		return (int) (Math.random() * Math.pow(10, 4));
+	}
+
 	@Override
 	public void showInfo() {
 		super.showInfo();
