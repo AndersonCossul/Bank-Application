@@ -19,8 +19,14 @@ public class Checking extends Account {
 	public Checking(String name, int socialSecurityNumber, double initialDeposit) {
 		super(name, socialSecurityNumber, initialDeposit);
 		accountNumber = "1" + accountNumber;
-		System.out.println("Account number: " + accountNumber);
 	}
 
 	// List any methods specific to the Checking Account
+	@Override
+	public void showInfo() {
+		super.showInfo();
+		System.out.println("----------\nChecking Account Specific Info:");
+		System.out.println("Debit Card Number: " + debitCardNumber);
+		System.out.println("Debit Card PIN: " + debitCardPIN);
+	}
 }

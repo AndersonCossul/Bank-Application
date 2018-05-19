@@ -19,8 +19,14 @@ public class Saving extends Account {
 	public Saving(String name, int socialSecurityNumber, double balance) {
 		super(name, socialSecurityNumber, balance);
 		accountNumber = "2" + accountNumber;
-		System.out.println("Account number: " + accountNumber);
 	}
 
 	// List any methods specific to the Savings Account
+	@Override
+	public void showInfo() {
+		super.showInfo();
+		System.out.println("----------\nSaving Account Specific Info:");
+		System.out.println("Safety Deposit Box ID: " + safetyDepositBoxID);
+		System.out.println("Safety Deposit Box Key: " + safetyDepositBoxKey);
+	}
 }

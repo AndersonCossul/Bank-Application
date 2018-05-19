@@ -31,6 +31,14 @@ public abstract class Account implements IBaseRate {
 		int lastTwoOfSocialSecurityNumber = socialSecurityNumber % 100;
 		int unique5DigitNumber = accountCounter++;
 		int random3digitNumber = (int) (Math.random() * Math.pow(10, 3));
-		return lastTwoOfSocialSecurityNumber + " " + unique5DigitNumber + " " + random3digitNumber;
+		return lastTwoOfSocialSecurityNumber + "" + unique5DigitNumber + "" + random3digitNumber;
+	}
+	
+	public void showInfo() {
+		System.out.println("ACCOUNT INFO:\n-------------");
+		System.out.println("Name: " + name);
+		System.out.println("Social Security Number: " + socialSecurityNumber);
+		System.out.println("Balance: " + balance);
+		System.out.println("Account Number: " + accountNumber);
 	}
 }
