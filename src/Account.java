@@ -36,6 +36,36 @@ public abstract class Account implements IBaseRate {
 	}
 
 	/**
+	 * SetRate will be handled by the classes which inherit this class.
+	 * @return rate (double)
+	 */
+	public abstract double setRate();
+	
+	public void deposit(double value) {
+		balance += value;
+		System.out.println("Deposit of $" + value + " processed.");
+	}
+	
+	public void withdraw(double value) {
+		if (balance - value < 0) {
+			System.out.println("WITHDRAW: Insuficient Balance.\nBalance: $" + balance);
+		} else {
+			balance -= value;
+			System.out.println("Withdraw of $" + value + " processed.");
+		}
+	}
+	
+	public void transfer(double value, Account account) {
+		if (balance - value < 0) {
+			System.out.println("TRANSFER: Insuficient Balance.\nBalance: $" + balance);
+		} else {
+			account.deposit(value);
+			balance -= value;
+			System.out.println("Transfer of $" + value + " processed.");
+		}
+	}
+	
+	/**
 	 * Prints to the console the account info.
 	 */
 	public void showInfo() {
@@ -46,6 +76,4 @@ public abstract class Account implements IBaseRate {
 		System.out.println("Account Number: " + accountNumber);
 		System.out.println("Rate: " + rate);
 	}
-	
-	public abstract double setRate();
 }
