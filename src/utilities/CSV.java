@@ -11,10 +11,15 @@ import java.util.List;
  * @author Anderson Cossul
  */
 public class CSV {
-
-	public List<String[]> read(String file) {
-		List<String[]> data = new LinkedList<String[]>();
+	
+	/**
+	 * @param file (Path String)
+	 * @return List. Each item will be also be a list.
+	 */
+	public static List<String[]> read(String file) {
+		List<String[]> data = new LinkedList<>();
 		String dataRow;
+		
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(file));
 
@@ -22,11 +27,14 @@ public class CSV {
 				String[] dataRecords = dataRow.split(",");
 				data.add(dataRecords);
 			}
+			
+			br.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("File not found.");
 		} catch (IOException e) {
 			System.out.println("There was a problem when reading the CSV file.");
 		}
+		
 		return data;
 	}
 
