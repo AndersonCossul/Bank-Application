@@ -5,9 +5,12 @@
  *
  */
 public class Checking extends Account {
-	// List properties specific to a Checking Account
+	private int debitCardNumber;
+	private int debitCardPIN;
 	
-	// Constructor to initialize Checking Account properties
+	public Checking(String name, int socialSecurityNumber, double balance) {
+		super(name, socialSecurityNumber, balance);
+	}
 	
 	// List any methods specific to the Checking Account
 }

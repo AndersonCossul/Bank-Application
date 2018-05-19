@@ -5,9 +5,12 @@
  *
  */
 public class Saving extends Account {
-	// List properties specific to a Savings Account
+	private int safetyDepositBoxID;
+	private int safetyDepositBoxKey;
 	
-	// Constructor to initialize Savings Account properties
-	
+	public Saving(String name, int socialSecurityNumber, double balance) {
+		super(name, socialSecurityNumber, balance);
+	}
+
 	// List any methods specific to the Savings Account
 }
