@@ -37,11 +37,23 @@ public class Checking extends Account {
 		return (int) (Math.random() * Math.pow(10, 4));
 	}
 
+	/**
+	 * Prints parents info and add checking specific info.
+	 */
 	@Override
 	public void showInfo() {
 		super.showInfo();
 		System.out.println("----------\nChecking Account Specific Info:");
 		System.out.println("Debit Card Number: " + debitCardNumber);
 		System.out.println("Debit Card PIN: " + debitCardPIN);
+	}
+
+	/**
+	 * The saving accounts will use 15% of the base rate defined
+	 * in the API (accessed by getBaseRate()).
+	 */
+	@Override
+	public double setRate() {
+		return .15 * getBaseRate();
 	}
 }

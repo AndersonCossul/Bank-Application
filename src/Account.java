@@ -17,6 +17,7 @@ public abstract class Account implements IBaseRate {
 		this.socialSecurityNumber = socialSecurityNumber;
 		balance = initialDeposit;
 		accountNumber = setAccountNumber();
+		rate = setRate();
 	}
 
 	/**
@@ -34,11 +35,17 @@ public abstract class Account implements IBaseRate {
 		return lastTwoOfSocialSecurityNumber + "" + unique5DigitNumber + "" + random3digitNumber;
 	}
 
+	/**
+	 * Prints to the console the account info.
+	 */
 	public void showInfo() {
 		System.out.println("ACCOUNT INFO:\n-------------");
 		System.out.println("Name: " + name);
 		System.out.println("Social Security Number: " + socialSecurityNumber);
 		System.out.println("Balance: " + balance);
 		System.out.println("Account Number: " + accountNumber);
+		System.out.println("Rate: " + rate);
 	}
+	
+	public abstract double setRate();
 }
