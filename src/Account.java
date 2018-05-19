@@ -11,20 +11,19 @@ public abstract class Account implements IBaseRate {
 	protected String accountNumber;
 	protected double rate;
 	protected static int accountCounter = 10000;
-	
+
 	public Account(String name, int socialSecurityNumber, double initialDeposit) {
 		this.name = name;
 		this.socialSecurityNumber = socialSecurityNumber;
 		balance = initialDeposit;
 		accountNumber = setAccountNumber();
-		System.out.println("Account number: " + accountNumber);
 	}
 
 	/**
 	 * Generated with the following process: 1 or 2 depending on Savings or
 	 * Checking, last two digits of SSN, unique 5-digit number, and random
-	 * 3-digit number.
-	 * The first digit (1 for savings and 2 for checking will be done in the override).
+	 * 3-digit number. The first digit (1 for savings and 2 for checking will be
+	 * done in the classes inheriting this class).
 	 * 
 	 * @return accountNumber
 	 */
@@ -32,6 +31,6 @@ public abstract class Account implements IBaseRate {
 		int lastTwoOfSocialSecurityNumber = socialSecurityNumber % 100;
 		int unique5DigitNumber = accountCounter++;
 		int random3digitNumber = (int) (Math.random() * Math.pow(10, 3));
-		return lastTwoOfSocialSecurityNumber + "" + unique5DigitNumber + "" + random3digitNumber;
+		return lastTwoOfSocialSecurityNumber + " " + unique5DigitNumber + " " + random3digitNumber;
 	}
 }
